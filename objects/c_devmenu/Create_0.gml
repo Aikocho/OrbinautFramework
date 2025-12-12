@@ -38,6 +38,20 @@ m_devmenu_add_category    // ID 1
 
 // Automatically generate a room list
 var _room_list = [];
+var _index = 0;
+
+// YoYo are clowns, check this: https://github.com/YoYoGames/GameMaker-Bugs/issues/12894
+for (var _i = 0; _i <= 999; _i++)
+{
+	var _name = room_get_name(_i);
+	
+	if _name != "<undefined>"
+	{
+		_room_list[_index] = string_upper(_name);
+		_index++;
+	}
+}
+
 
 for (var _i = 0; _i <= room_last; _i++)
 {
